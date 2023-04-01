@@ -11,7 +11,7 @@ var SERVER_PORT = 5000;
 // Environment variable: URL where our OpenVidu server is listening
 var OPENVIDU_URL = 'https://openvidu-ce-2250.openvidu.io';
 // Environment variable: secret shared with our OpenVidu server
-var OPENVIDU_SECRET = 'TSCM_SECRET';
+var OPENVIDU_SECRET = 'MY_SECRET';
 
 // Enable CORS support
 
