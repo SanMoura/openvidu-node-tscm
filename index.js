@@ -10,7 +10,7 @@ app.use(cors());
 // Environment variable: PORT where the node server is listening
 var SERVER_PORT = 5000;
 // Environment variable: URL where our OpenVidu server is listening
-var OPENVIDU_URL = 'https://openvidu-ce-2260.openvidu.io/'//'https://openvidu-ce-2250.openvidu.io';
+var OPENVIDU_URL = 'https://a04b-186-208-11-62.ngrok.io'//'https://openvidu-ce-2250.openvidu.io';
 // Environment variable: secret shared with our OpenVidu server
 var OPENVIDU_SECRET = 'MY_SECRET';
 
@@ -31,11 +31,6 @@ app.use(express.static(__dirname + '/public'));
 server.listen(SERVER_PORT, () => {
   console.log("Application started on port: ", SERVER_PORT);
   console.warn('Application server connecting to OpenVidu at ' + OPENVIDU_URL);
-});
-
-app.post("/openvidu/api/sessions", async (req, res) => {
-  var session = await openvidu.createSession(req.body);
-  res.send(session.sessionId);
 });
 
 app.post("/api/sessions", async (req, res) => {
