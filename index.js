@@ -9,7 +9,7 @@ var app = express();
 // Environment variable: PORT where the node server is listening
 var SERVER_PORT = 5000;
 // Environment variable: URL where our OpenVidu server is listening
-var OPENVIDU_URL = 'https://openvidu-ce-2250.openvidu.io';
+var OPENVIDU_URL = 'https://3519-186-208-11-62.ngrok.io'//'https://openvidu-ce-2250.openvidu.io';
 // Environment variable: secret shared with our OpenVidu server
 var OPENVIDU_SECRET = 'MY_SECRET';
 
@@ -33,6 +33,11 @@ server.listen(SERVER_PORT, () => {
   console.warn('Application server connecting to OpenVidu at ' + OPENVIDU_URL);
 });
 
+app.post("/openvidu/api/sessions", async (req, res) => {
+  var session = await openvidu.createSession(req.body);
+  res.send(session.sessionId);
+});
+
 app.post("/api/sessions", async (req, res) => {
   var session = await openvidu.createSession(req.body);
   res.send(session.sessionId);
@@ -50,4 +55,4 @@ app.post("/api/sessions/:sessionId/connections", async (req, res) => {
   }
 });
 
-process.on('uncaughtException', err => console.error(JSON.stringify(err)));
+process.on('uncaughtException', err => console.error(err));
