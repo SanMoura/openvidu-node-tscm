@@ -50,4 +50,4 @@ app.post("/api/sessions/:sessionId/connections", async (req, res) => {
   }
 });
 
-process.on('uncaughtException', err => console.error(err));
+process.on('uncaughtException', err => console.error(JSON.stringify(err)));
