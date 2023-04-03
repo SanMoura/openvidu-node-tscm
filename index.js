@@ -5,6 +5,7 @@ var http = require("http");
 var OpenVidu = require("openvidu-node-client").OpenVidu;
 var cors = require("cors");
 var app = express();
+app.use(cors());
 
 // Environment variable: PORT where the node server is listening
 var SERVER_PORT = 5000;
@@ -25,7 +26,6 @@ app.use(bodyParser.json());
 
 // Serve static resources if available
 app.use(express.static(__dirname + '/public'));
-app.use(cors());
 
 // Serve application
 server.listen(SERVER_PORT, () => {
