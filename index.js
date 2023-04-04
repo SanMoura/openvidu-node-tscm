@@ -10,7 +10,7 @@ app.use(cors());
 // Environment variable: PORT where the node server is listening
 var SERVER_PORT = 5000;
 // Environment variable: URL where our OpenVidu server is listening
-var OPENVIDU_URL = 'http://34.151.235.109:4443'//'https://openvidu-ce-2250.openvidu.io';
+var OPENVIDU_URL = 'https://982c-186-208-11-62.ngrok.iO'//'https://openvidu-ce-2250.openvidu.io';
 // Environment variable: secret shared with our OpenVidu server
 var OPENVIDU_SECRET = 'MY_SECRET';
 
